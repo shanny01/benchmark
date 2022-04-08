@@ -1,2 +1,4 @@
+^renv$
+^renv\.lock$
 ^benchmark\.Rproj$
 ^\.Rproj\.user$
