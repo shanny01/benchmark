@@ -1,5 +1,5 @@
 Package: benchmark
-Title: Benchmark Analysis using CITEdb
+Title: benchmark analysis using CITEdb
 Version: 0.0.0.1
 Authors@R: 
     person("Nayang", "Shan", , "shanny01@foxmail.com", role = c("aut", "cre"),
