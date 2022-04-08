@@ -46,15 +46,54 @@ The input of the package is text files with predicted cell-cell interactions and
 This is a basic example which shows you how to use benchmark:
 
 ``` r
-# library(benchmark)
+library(ggplot2)
+library(dplyr)
+#> 
+#> Attaching package: 'dplyr'
+#> The following objects are masked from 'package:stats':
+#> 
+#>     filter, lag
+#> The following objects are masked from 'package:base':
+#> 
+#>     intersect, setdiff, setequal, union
+library(yardstick)
+#> For binary classification, the first factor level is assumed to be the event.
+#> Use the argument `event_level = "second"` to alter this as needed.
+
+library(benchmark)
 
 ## load example data
-# load('Default.sum.RData')
+load('data/Default.sum.RData')
 
 ## benchmark one algorithm
-# benchmark(asses=Default.sum[[1]])
-
-##benchmark multiple algorithms at once
-# input = do.call(rbind,Default.sum)
-# benchmark(asses=input)
+benchmark(asses=Default.sum[[1]])
+#> [[1]]
 ```
+
+<img src="man/figures/README-example-1.png" width="100%" />
+
+    #> 
+    #> [[2]]
+    #> # A tibble: 1 × 4
+    #>   Method   .metric .estimator .estimate
+    #>   <chr>    <chr>   <chr>          <dbl>
+    #> 1 CellChat pr_auc  binary         0.624
+
+    ##benchmark multiple algorithms at once
+    input = do.call(rbind,Default.sum)
+    benchmark(asses=input)
+    #> [[1]]
+
+<img src="man/figures/README-example-2.png" width="100%" />
+
+    #> 
+    #> [[2]]
+    #> # A tibble: 6 × 4
+    #>   Method            .metric .estimator .estimate
+    #>   <chr>             <chr>   <chr>          <dbl>
+    #> 1 CellChat          pr_auc  binary         0.624
+    #> 2 CellPhoneDB       pr_auc  binary         0.751
+    #> 3 Connectome        pr_auc  binary         0.749
+    #> 4 iTALK             pr_auc  binary         0.642
+    #> 5 NATMI             pr_auc  binary         0.801
+    #> 6 SingleCellSignalR pr_auc  binary         0.845

@@ -61,15 +61,19 @@ SingleCellSignalR | fibroblast| fibroblast | 27.396210
 This is a basic example which shows you how to use benchmark:
 
 ```{r example}
-# library(benchmark)
+library(ggplot2)
+library(dplyr)
+library(yardstick)
+
+library(benchmark)
 
 ## load example data
-# load('Default.sum.RData')
+load('data/Default.sum.RData')
 
 ## benchmark one algorithm
-# benchmark(asses=Default.sum[[1]])
+benchmark(asses=Default.sum[[1]])
 
 ##benchmark multiple algorithms at once
-# input = do.call(rbind,Default.sum)
-# benchmark(asses=input)
+input = do.call(rbind,Default.sum)
+benchmark(asses=input)
 ```
