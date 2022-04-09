@@ -2,7 +2,7 @@
 % Please edit documentation in R/benchmark.R
 \name{benchmark}
 \alias{benchmark}
-\title{Returns the precision-recall curves and tables of precision-recall values of benchmark analysis using CITEdb}
+\title{Automatic benchmark analysis using CITEdb}
 \usage{
 benchmark(assess)
 }
@@ -16,11 +16,14 @@ the precision-recall curves and tables of precision-recall values
 Returns the precision-recall curves and tables of precision-recall values of benchmark analysis using CITEdb
 }
 \examples{
+library(ggplot2)
+library(dplyr)
+library(yardstick)
 library(benchmark)
 #load example data
-load('Default.sum.RData')
+data('Default.sum')
 #benchmark one algorithm
-benchmark(Default.sum[[6]])
+benchmark(Default.sum[[1]])
 
 #benchmark multiple algorithms at once
 input = do.call(rbind,Default.sum)
