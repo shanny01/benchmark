@@ -41,7 +41,7 @@ You can follow the tutorial below to get started using benchmark for the bemchma
 
 The input of the package is text files with predicted cell-cell interactions and the outputs are precision-recall curves and tables of precision-recall values. Required data and formats can be prepared as follows:
 
-1: retuen a list of predicted ligand-receptor interactions with its own format and significance assessment by the prediction algorithms;
+1: return a list of predicted ligand-receptor interactions with its own format and significance assessment by the prediction algorithms;
 
 2: summarize the results using the sum of ligand-receptor scores, the number of significant ligand-receptor pairs, or other modes as the weight of cell-cell interactions;
 
@@ -68,7 +68,7 @@ library(yardstick)
 library(benchmark)
 
 ## load example data
-load('data/Default.sum.RData')
+data('Default.sum')
 
 ## benchmark one algorithm
 benchmark(asses=Default.sum[[1]])
