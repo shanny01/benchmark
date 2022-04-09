@@ -41,9 +41,11 @@ The input of the package is text files with predicted cell-cell interactions and
 | SingleCellSignalR |       fibroblast       |         B cell         |  1.832844 |
 | SingleCellSignalR |       fibroblast       |       fibroblast       | 27.396210 |
 
+You can follow the example\_code.R in the example directory of the package or the following example to use benchmark for your own datasets.
+
 ## Example
 
-This is a basic example which shows you how to use benchmark or you can follow the example\_code.R in the example directory of the package:
+This is a basic example which shows you how to use benchmark:
 
 ``` r
 library(ggplot2)
