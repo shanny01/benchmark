@@ -11,9 +11,9 @@
 #' library(yardstick)
 #' library(benchmark)
 #' #load example data
-#' load('Default.sum.RData')
+#' data('Default.sum')
 #' #benchmark one algorithm
-#' benchmark(Default.sum[[6]])
+#' benchmark(Default.sum[[1]])
 #'
 #' #benchmark multiple algorithms at once
 #' input = do.call(rbind,Default.sum)
