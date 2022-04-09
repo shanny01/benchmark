@@ -58,13 +58,12 @@ SingleCellSignalR | fibroblast| fibroblast | 27.396210
 
 ## Example
 
-This is a basic example which shows you how to use benchmark:
+This is a basic example which shows you how to use benchmark or you can follow the example_code.R in the example directory of the package:
 
 ```{r example}
 library(ggplot2)
 library(dplyr)
 library(yardstick)
-
 library(benchmark)
 
 ## load example data

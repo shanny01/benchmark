@@ -43,7 +43,7 @@ The input of the package is text files with predicted cell-cell interactions and
 
 ## Example
 
-This is a basic example which shows you how to use benchmark:
+This is a basic example which shows you how to use benchmark or you can follow the example\_code.R in the example directory of the package:
 
 ``` r
 library(ggplot2)
@@ -59,7 +59,6 @@ library(dplyr)
 library(yardstick)
 #> For binary classification, the first factor level is assumed to be the event.
 #> Use the argument `event_level = "second"` to alter this as needed.
-
 library(benchmark)
 
 ## load example data
