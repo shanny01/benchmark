@@ -20,6 +20,7 @@ library(ggplot2)
 library(dplyr)
 library(yardstick)
 library(benchmark)
+
 #load example data
 data('Default.sum')
 #benchmark one algorithm
