@@ -6,6 +6,9 @@
 #' @export
 #'
 #' @examples
+#' library(ggplot2)
+#' library(dplyr)
+#' library(yardstick)
 #' library(benchmark)
 #' #load example data
 #' load('Default.sum.RData')
