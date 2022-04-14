@@ -37,7 +37,7 @@ devtools::install_github("shanny01/benchmark")
 
 ##Tutorial
 
-You can follow the tutorial below to get started using benchmark for the bemchmark analysis of the prediction algorithms.
+You can follow the tutorial below to get started using benchmark for the benchmark analysis of the prediction algorithms.
 
 The input of the package is text files with predicted cell-cell interactions and the outputs are precision-recall curves and tables of precision-recall values. Required data and formats can be prepared as follows:
 
