@@ -1,6 +1,6 @@
 Package: benchmark
 Title: benchmark analysis using CITEdb
-Version: 0.0.0.1
+Version: 1.0
 Authors@R: 
     person("Nayang", "Shan", , "shanny01@foxmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
