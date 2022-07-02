@@ -76,7 +76,7 @@ benchmark(assess = Default.sum[[1]],directed = T)
 #> which will replace the existing scale.
 ```
 
-<img src="man/figures/README-example-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
 
 ``` r
 
@@ -88,7 +88,7 @@ benchmark(assess = input,directed = T)
 #> which will replace the existing scale.
 ```
 
-<img src="man/figures/README-example-2.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-2-2.png" width="100%" />
 
 ``` r
 
@@ -104,4 +104,4 @@ benchmark(assess = input,directed = F)
 #> which will replace the existing scale.
 ```
 
-<img src="man/figures/README-example-3.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-2-3.png" width="100%" />

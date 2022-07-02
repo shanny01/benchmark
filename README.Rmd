@@ -61,7 +61,7 @@ You can follow the example_code.R in the example directory of the package or the
 
 This is a basic example which shows you how to use benchmark:
 
-```{r example}
+```{r dpi=600}
 library(ggplot2)
 library(dplyr)
 library(yardstick)
