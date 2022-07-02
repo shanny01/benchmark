@@ -4,7 +4,7 @@
 
 <!-- badges: start -->
 <!-- badges: end -->
-CITEdb(<https://citedb.cn/#/>), a cell-cell interaction database at cellular level that has been manually curated from literatures, provides an initial benchmark dataset when interpreting and evaluating the computational results of cell-cell interactions derived from different tools. benchmark is provided for automatic benchmark analysis using CITEdb.
+CITEdb(<https://citedb.cn/#/>), a cell-cell interaction database at cellular level that has been manually curated from literatures, provides an initial benchmark dataset when interpreting and evaluating the computational results of cell-cell interactions derived from different tools. benchmark is developed to enjoy great flexibility by allowing automatic benchmark analysis of directed and undirected cell-cell interactions using CITEdb.
 
 <font size=4>How to cite:</font>
 
@@ -25,11 +25,11 @@ devtools::install_github("shanny01/benchmark")
 
 You can follow the tutorial below to get started using benchmark for the benchmark analysis of the prediction algorithms.
 
-The input of the package is text files with predicted cell-cell interactions and the outputs are precision-recall curves and tables of precision-recall values. Required data and formats can be prepared as follows:
+The input of the package is text files with predicted cell-cell interactions and the outputs are precision-recall curves and precision-recall values. Required data and formats can be prepared as follows:
 
 1: return a list of predicted ligand-receptor interactions with its own format and significance assessment by the prediction algorithms;
 
-2: summarize the results using the sum of ligand-receptor scores, the number of significant ligand-receptor pairs, or other modes as the weight of cell-cell interactions;
+2: summarize the results using the sum of ligand-receptor scores, the number of significant ligand-receptor pairs, or directly using Bray-Curtis score and the enrichment score as the overall weight of cell-cell interactions;
 
 3: unify the coding of cell types in Step 2 to cell type class in CITEdb;
 
@@ -63,38 +63,45 @@ library(yardstick)
 #> Use the argument `event_level = "second"` to alter this as needed.
 library(benchmark)
 
-## load example data
+data("CITEdb")
+
+## load example data with directed cell-cell interactions
+## Cell–cell interactions in human metastatic melanoma predicted by CellChat, CellPhoneDB, Connectome, iTALK, NATMI,  and SingleCellSignalR using the default LR resources based on the sum of ligand-receptor scores.
 data('Default.sum')
 
 ## benchmark one algorithm
-benchmark(asses=Default.sum[[1]])
-#> [[1]]
+benchmark(assess = Default.sum[[1]],directed = T)
+#> Coordinate system already present. Adding new coordinate system, which will replace the existing one.
+#> Scale for 'colour' is already present. Adding another scale for 'colour',
+#> which will replace the existing scale.
 ```
 
 <img src="man/figures/README-example-1.png" width="100%" />
 
-    #> 
-    #> [[2]]
-    #> # A tibble: 1 × 4
-    #>   Method   .metric .estimator .estimate
-    #>   <chr>    <chr>   <chr>          <dbl>
-    #> 1 CellChat pr_auc  binary         0.624
+``` r
 
-    ##benchmark multiple algorithms at once
-    input = do.call(rbind,Default.sum)
-    benchmark(asses=input)
-    #> [[1]]
+##benchmark multiple algorithms at once
+input = do.call(rbind,Default.sum)
+benchmark(assess = input,directed = T)
+#> Coordinate system already present. Adding new coordinate system, which will replace the existing one.
+#> Scale for 'colour' is already present. Adding another scale for 'colour',
+#> which will replace the existing scale.
+```
 
 <img src="man/figures/README-example-2.png" width="100%" />
 
-    #> 
-    #> [[2]]
-    #> # A tibble: 6 × 4
-    #>   Method            .metric .estimator .estimate
-    #>   <chr>             <chr>   <chr>          <dbl>
-    #> 1 CellChat          pr_auc  binary         0.624
-    #> 2 CellPhoneDB       pr_auc  binary         0.751
-    #> 3 Connectome        pr_auc  binary         0.749
-    #> 4 iTALK             pr_auc  binary         0.642
-    #> 5 NATMI             pr_auc  binary         0.801
-    #> 6 SingleCellSignalR pr_auc  binary         0.845
+``` r
+
+## load example data with undirected cell-cell interactions
+## Cell–cell interactions in human metastatic melanoma based on Bray-Curtis score and the enrichment score using the concensus LR resource in LIANA.
+data('Bray.Curtis.score_Enrichment.score')
+
+## benchmark multiple algorithms at once
+input = do.call(rbind,Bray.Curtis.score_Enrichment.score)
+benchmark(assess = input,directed = F)
+#> Coordinate system already present. Adding new coordinate system, which will replace the existing one.
+#> Scale for 'colour' is already present. Adding another scale for 'colour',
+#> which will replace the existing scale.
+```
+
+<img src="man/figures/README-example-3.png" width="100%" />
