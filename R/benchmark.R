@@ -26,7 +26,6 @@
 #' input = do.call(rbind,Bray.Curtis.score_Enrichment.score)
 #' benchmark(assess = input,directed = F)
 benchmark <- function(assess,directed){
-  data('CITEdb.RData')
   CITEdb.1 = CITEdb[CITEdb$Information==1,]
 
   if(directed == T){
