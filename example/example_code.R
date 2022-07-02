@@ -8,8 +8,8 @@ library(benchmark)
 data('Default.sum')
 
 ## benchmark one algorithm
-benchmark(asses=Default.sum[[1]])
+benchmark(assess = Default.sum[[1]])
 
 ##benchmark multiple algorithms at once
 input = do.call(rbind,Default.sum)
-benchmark(asses=input)
+benchmark(assess = input)
