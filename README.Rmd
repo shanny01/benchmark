@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 
 CITEdb(https://citedb.cn/#/), a cell-cell interaction database at cellular level that has been manually curated from literatures, provides an initial benchmark dataset when interpreting and evaluating the computational results of cell-cell interactions derived from different tools. benchmark is developed to enjoy great flexibility by allowing automatic benchmark analysis of directed and undirected cell-cell interactions using CITEdb.
 
-<font size=4>How to cite:</font>
+<font size=4>How to cite:</font> Shan N, Lu Y, Guo H, Li D, Jiang J, Yan L, Gao J, Ren Y, Zhao X, Hou L. CITEdb: a manually curated database of cell-cell interactions in human. Bioinformatics. 2022 Sep 30:btac654. doi: 10.1093/bioinformatics/btac654. Epub ahead of print. PMID: 36179089.
 
 <font size=4>Contact:</font> Nayang Shan [shanny01@foxmail.com]
 
